@@ -112,13 +112,15 @@ export default {
   name: 'Home',
   setup() {
     const privateKey = ref('');
+    const d = ref('');
     const noCompressKey = ref('');
     const compressKey = ref('');
     const encoded = ref('');
     const handleGenerate = () => {
       let testnet = bitcoin.networks.testnet;
-      privateKey.value =
-        bitcoin.ECPair.makeRandom(testnet).privateKey.toString('hex');
+      const keyPair = bitcoin.ECPair.makeRandom(testnet);
+      console.log(keyPair);
+      privateKey.value = keyPair.privateKey.toString('hex');
     };
     const handleCompress = (boo) => {
       // 十六进制表示的私钥:
@@ -142,6 +144,7 @@ export default {
       console.log(encoded);
     };
     return {
+      d,
       privateKey,
       noCompressKey,
       compressKey,
