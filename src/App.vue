@@ -15,7 +15,9 @@
         <router-link to="/segwit">Segwit地址</router-link>|
         <router-link to="/hd">HD钱包</router-link>|
         <router-link to="/words">助记词</router-link>|
-        <router-link to="/balance">余额</router-link>
+        <router-link to="/balance">余额</router-link>|
+        <router-link to="/ethereum">理解开发HD钱包</router-link>|
+        <router-link to="/seedprivate">以太坊</router-link>
       </div>
     </el-header>
     <el-main>

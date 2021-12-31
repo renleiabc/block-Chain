@@ -126,6 +126,7 @@ export default {
       // or use bip39.mnemonicToSeedHex(words)
       seeds.value = seedAsHex;
       console.log(seedAsHex);
+      console.log(seedAsHex.length);
     };
     //生成中文助记词
     const handleWordCn = () => {
@@ -159,6 +160,8 @@ export default {
     arrWordKey.value = wordKey.split(' ');
     const handleWordKey = () => {
       // 计算seed:
+      //   const words = bip39.generateMnemonic(160);
+      // 生成种子
       let seedBuffer = bip39.mnemonicToSeedSync(wordKey, password);
       let seedHex = seedBuffer.toString('hex');
       console.log('seed: ' + seedHex); // b59a8078...c9ebfaaa
@@ -179,6 +182,7 @@ export default {
         pubkey: child0.publicKey
       });
       privateKey.value = child0.toWIF();
+      console.log(child0.privateKey.toString('hex'));
       publicKey.value = child0.publicKey.toString('hex');
       // 生成以bc开头的地址：
       const objBc = bitcoin.payments.p2wpkh({
@@ -192,6 +196,8 @@ export default {
       privateKey.value = child0.toWIF();
       // eslint-disable-next-line quotes
       console.log("prv m/44'/0'/0'/0/0: " + child0.toWIF()); // KzuPk3PXKdnd6QwLqUCK38PrXoqJfJmACzxTaa6TFKzPJR7H7AFg
+      const str = 'KzuPk3PXKdnd6QwLqUCK38PrXoqJfJmACzxTaa6TFKzPJR7H7AFg';
+      console.log(str.length);
       // eslint-disable-next-line quotes
       address.value = obj.address;
       addressBc.value = objBc.address;

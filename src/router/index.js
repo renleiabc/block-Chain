@@ -88,6 +88,27 @@ const routes = [
     meta: {
       title: '余额'
     }
+  },
+  {
+    path: '/ethereum',
+    name: 'Ethereum',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/ethereum.vue'),
+    meta: {
+      title: '理解开发HD 钱包涉及的 BIP32、BIP44、BIP39'
+    }
+  },
+  {
+    path: '/seedprivate',
+    name: 'SendPrivate',
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/sendPrivate.vue'),
+    meta: {
+      title: '通过助记词用不同的方式生成以太坊私钥、公钥、地址'
+    }
   }
 ];
 
